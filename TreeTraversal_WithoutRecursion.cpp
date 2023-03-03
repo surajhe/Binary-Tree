@@ -144,5 +144,23 @@ vector<int> Solution::postorderTraversal(TreeNode* A) {
         {
             s1.push(curr->left);
         }
-    }    
+
+        if(curr->right != nullptr)
+        {
+            s1.push(curr->right);
+        }
+    }
+    
+    while(!s2.empty())
+    {
+        TreeNode* curr = s2.top();
+        s2.pop();
+
+        V.push_back(curr->val);
+    }
+
+
+    return V;
+
+    
 }
